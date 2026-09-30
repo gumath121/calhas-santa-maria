@@ -1,1730 +1,853 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Calhas Santa Maria | Itapetininga</title>
+<title>Calhas Santa Maria | Itapetininga e Região</title>
 
-<meta name="description"
-content="Calhas Santa Maria - Calhas, rufos, pingadeiras, coberturas e estruturas metálicas em Itapetininga e região.">
+<meta name="description" content="Calhas Santa Maria - Calhas, rufos, pingadeiras, coberturas e estruturas metálicas em Itapetininga e região.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" href="logo.png">
 
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-font-family:Inter,Arial,sans-serif;
-background:#f7f9fc;
-color:#101a36;
-overflow-x:hidden;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#10244b;
+    background:#fff;
 }
 
 a{
-text-decoration:none;
-color:inherit;
+    text-decoration:none;
+    color:inherit;
 }
 
-button{
-font-family:inherit;
+img{
+    max-width:100%;
+    display:block;
 }
-
-.container{
-width:min(1180px,calc(100% - 40px));
-margin:auto;
-}
-
 
 /* =========================
-HEADER
+   HEADER
 ========================= */
 
 header{
-
-position:fixed;
-
-top:0;
-left:0;
-
-width:100%;
-
-height:82px;
-
-z-index:1000;
-
-background:rgba(255,255,255,.92);
-
-backdrop-filter:blur(15px);
-
-border-bottom:1px solid rgba(0,0,0,.06);
-
+    position:sticky;
+    top:0;
+    z-index:1000;
+    height:88px;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-bottom:1px solid #e8edf5;
 }
 
-.nav{
-
-height:100%;
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
+.header-container{
+    width:90%;
+    max-width:1250px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
 .logo{
-
-width:245px;
-
-height:auto;
-
+    width:230px;
 }
 
-.menu{
-
-display:flex;
-
-align-items:center;
-
-gap:30px;
-
-font-size:14px;
-
-font-weight:600;
-
+nav{
+    display:flex;
+    align-items:center;
+    gap:35px;
 }
 
-.menu a{
-
-transition:.3s;
-
+nav a{
+    font-size:16px;
+    font-weight:600;
+    color:#10244b;
+    transition:.3s;
+    position:relative;
 }
 
-.menu a:hover{
-
-color:#203aa8;
-
+nav a:hover{
+    color:#1264e8;
 }
 
-.menu-button{
-
-background:#17349f;
-
-color:white;
-
-padding:13px 20px;
-
-border-radius:8px;
-
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-9px;
+    width:0;
+    height:3px;
+    background:#1264e8;
+    border-radius:10px;
+    transition:.3s;
 }
 
-.menu-button:hover{
-
-background:#102675;
-
+nav a:hover::after{
+    width:100%;
 }
 
+.header-button{
+    background:#1264e8;
+    color:white;
+    padding:15px 25px;
+    border-radius:30px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:9px;
+    transition:.3s;
+}
+
+.header-button:hover{
+    transform:translateY(-2px);
+    background:#0954c8;
+}
 
 /* =========================
-HERO
+   HERO
 ========================= */
 
 .hero{
-
-min-height:760px;
-
-padding-top:82px;
-
-position:relative;
-
-display:flex;
-
-align-items:center;
-
-overflow:hidden;
-
-background:
-
-linear-gradient(
-
-115deg,
-
-#071331 0%,
-
-#0c1c50 50%,
-
-#183ca8 100%
-
-);
-
-color:white;
-
+    min-height:620px;
+    position:relative;
+    overflow:hidden;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4,39,100,.92) 0%,
+            rgba(6,57,130,.82) 42%,
+            rgba(6,57,130,.58) 100%
+        ),
+        url("hero-bg.png") center/cover no-repeat;
 }
 
-.hero::before{
-
-content:"";
-
-position:absolute;
-
-width:650px;
-
-height:650px;
-
-border:1px solid rgba(255,255,255,.08);
-
-border-radius:50%;
-
-right:-260px;
-
-top:80px;
-
-}
-
-.hero::after{
-
-content:"";
-
-position:absolute;
-
-width:400px;
-
-height:400px;
-
-border:1px solid rgba(255,255,255,.05);
-
-border-radius:50%;
-
-right:-120px;
-
-top:200px;
-
+.hero-container{
+    width:90%;
+    max-width:1250px;
+    min-height:620px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    position:relative;
 }
 
 .hero-content{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-align-items:center;
-
-gap:70px;
-
-position:relative;
-
-z-index:2;
-
+    width:65%;
+    color:#fff;
+    padding:70px 0;
 }
 
-.hero-text{
-
-max-width:650px;
-
+.location-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.18);
+    padding:11px 18px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:bold;
+    letter-spacing:.5px;
+    margin-bottom:25px;
 }
 
-.tag{
-
-display:inline-flex;
-
-align-items:center;
-
-gap:9px;
-
-font-size:12px;
-
-font-weight:700;
-
-letter-spacing:1px;
-
-text-transform:uppercase;
-
-padding:9px 14px;
-
-border:1px solid rgba(255,255,255,.2);
-
-border-radius:100px;
-
-background:rgba(255,255,255,.07);
-
-margin-bottom:25px;
-
-}
-
-.tag span{
-
-width:7px;
-
-height:7px;
-
-border-radius:50%;
-
-background:#6e91ff;
-
+.location-dot{
+    width:10px;
+    height:10px;
+    background:#3892ff;
+    border-radius:50%;
+    box-shadow:0 0 12px #3892ff;
 }
 
 .hero h1{
-
-font-size:clamp(45px,5.2vw,72px);
-
-line-height:1.02;
-
-letter-spacing:-3px;
-
-margin-bottom:25px;
-
+    font-size:64px;
+    line-height:1.04;
+    letter-spacing:-2px;
+    margin-bottom:25px;
+    max-width:760px;
 }
 
 .hero h1 span{
-
-color:#7191ff;
-
+    color:#3691ff;
 }
 
-.hero p{
-
-font-size:18px;
-
-line-height:1.7;
-
-color:#d9e1ff;
-
-max-width:580px;
-
-margin-bottom:35px;
-
+.hero-description{
+    max-width:680px;
+    font-size:19px;
+    line-height:1.6;
+    color:rgba(255,255,255,.91);
+    margin-bottom:32px;
 }
 
-.buttons{
-
-display:flex;
-
-gap:14px;
-
-flex-wrap:wrap;
-
-}
-
-.btn{
-
-display:inline-flex;
-
-align-items:center;
-
-justify-content:center;
-
-padding:16px 23px;
-
-border-radius:9px;
-
-font-size:14px;
-
-font-weight:800;
-
-transition:.3s;
-
+.hero-buttons{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
 }
 
 .btn-primary{
-
-background:white;
-
-color:#17349f;
-
+    background:#126cf4;
+    color:#fff;
+    padding:17px 27px;
+    border-radius:35px;
+    font-weight:bold;
+    font-size:16px;
+    transition:.3s;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
 }
 
 .btn-primary:hover{
-
-transform:translateY(-3px);
-
-box-shadow:0 15px 40px rgba(0,0,0,.25);
-
+    transform:translateY(-3px);
+    box-shadow:0 12px 30px rgba(0,0,0,.2);
 }
 
 .btn-outline{
-
-border:1px solid rgba(255,255,255,.3);
-
-color:white;
-
+    border:1px solid rgba(255,255,255,.8);
+    color:#fff;
+    padding:17px 27px;
+    border-radius:35px;
+    font-weight:bold;
+    font-size:16px;
+    transition:.3s;
 }
 
 .btn-outline:hover{
-
-background:rgba(255,255,255,.1);
-
+    background:#fff;
+    color:#123c83;
 }
 
+/* selo */
 
-/* HERO VISUAL */
-
-.hero-visual{
-
-height:500px;
-
-position:relative;
-
+.experience-card{
+    position:absolute;
+    right:20px;
+    bottom:65px;
+    background:#fff;
+    color:#113d8d;
+    padding:22px 28px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    box-shadow:0 15px 40px rgba(0,0,0,.18);
 }
 
-.hero-panel{
-
-position:absolute;
-
-inset:20px 0 20px 30px;
-
-border-radius:25px;
-
-overflow:hidden;
-
-background:
-
-linear-gradient(
-
-145deg,
-
-rgba(255,255,255,.15),
-
-rgba(255,255,255,.03)
-
-);
-
-border:1px solid rgba(255,255,255,.2);
-
-box-shadow:0 30px 80px rgba(0,0,0,.3);
-
+.experience-icon{
+    width:48px;
+    height:48px;
+    border:3px solid #1755a8;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
 }
 
-.roof{
-
-position:absolute;
-
-width:120%;
-
-height:230px;
-
-left:-10%;
-
-top:70px;
-
-background:
-
-linear-gradient(
-
-180deg,
-
-#cbd0d8,
-
-#646e80
-
-);
-
-transform:rotate(-8deg);
-
-clip-path:polygon(
-
-0 20%,
-
-100% 0,
-
-100% 80%,
-
-0 100%
-
-);
-
+.experience-card strong{
+    font-size:25px;
+    display:block;
 }
 
-.metal{
-
-position:absolute;
-
-height:18px;
-
-width:90%;
-
-right:-5%;
-
-top:265px;
-
-background:
-
-linear-gradient(
-
-180deg,
-
-#f1f3f6,
-
-#8993a2
-
-);
-
-border-radius:5px;
-
-transform:rotate(-5deg);
-
-box-shadow:0 10px 25px rgba(0,0,0,.4);
-
+.experience-card span{
+    color:#526582;
+    font-size:14px;
 }
-
-.pipe{
-
-position:absolute;
-
-height:180px;
-
-width:23px;
-
-right:23%;
-
-top:275px;
-
-background:
-
-linear-gradient(
-
-90deg,
-
-#737d8c,
-
-#f2f4f7,
-
-#6e7786
-
-);
-
-transform:rotate(-5deg);
-
-border-radius:3px;
-
-}
-
-.hero-card{
-
-position:absolute;
-
-bottom:0;
-
-left:0;
-
-background:white;
-
-color:#15204b;
-
-padding:20px 24px;
-
-border-radius:14px;
-
-box-shadow:0 20px 50px rgba(0,0,0,.3);
-
-}
-
-.hero-card strong{
-
-font-size:27px;
-
-display:block;
-
-}
-
-.hero-card small{
-
-color:#70798d;
-
-}
-
 
 /* =========================
-TRUST BAR
+   TRUST BAR
 ========================= */
 
-.trust{
-
-background:white;
-
-border-bottom:1px solid #e9edf4;
-
+.trust-bar{
+    background:#fff;
+    box-shadow:0 -5px 25px rgba(0,0,0,.04);
+    position:relative;
+    z-index:5;
 }
 
-.trust-grid{
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
+.trust-container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    min-height:120px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    align-items:center;
 }
 
 .trust-item{
-
-padding:30px;
-
-text-align:center;
-
-border-right:1px solid #e8ebf1;
-
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+    padding:20px;
+    border-right:1px solid #dce3ed;
 }
 
 .trust-item:last-child{
+    border-right:none;
+}
 
-border-right:none;
-
+.trust-icon{
+    font-size:42px;
 }
 
 .trust-item strong{
-
-display:block;
-
-font-size:24px;
-
-color:#17349f;
-
-margin-bottom:4px;
-
+    display:block;
+    color:#12469b;
+    font-size:23px;
 }
 
 .trust-item span{
-
-font-size:12px;
-
-color:#747d90;
-
+    color:#5b6c87;
+    font-size:15px;
 }
 
-
 /* =========================
-SECTION
+   SEÇÕES
 ========================= */
 
-section{
-
-padding:110px 0;
-
+.section{
+    padding:90px 0;
 }
 
-.eyebrow{
-
-font-size:11px;
-
-font-weight:900;
-
-letter-spacing:2px;
-
-color:#2945b1;
-
-text-transform:uppercase;
-
+.section-container{
+    width:90%;
+    max-width:1150px;
+    margin:auto;
 }
 
-.section-title{
-
-font-size:clamp(34px,4vw,50px);
-
-line-height:1.08;
-
-letter-spacing:-2px;
-
-margin-top:10px;
-
+.section-header{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 55px;
 }
 
-.section-description{
-
-color:#70798c;
-
-max-width:600px;
-
-margin-top:18px;
-
-line-height:1.7;
-
+.section-header small{
+    color:#1268e8;
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:2px;
 }
 
+.section-header h2{
+    font-size:42px;
+    margin:12px 0 18px;
+    color:#102d61;
+}
+
+.section-header p{
+    color:#64748b;
+    line-height:1.7;
+    font-size:17px;
+}
 
 /* =========================
-SERVICES
+   SERVIÇOS
 ========================= */
 
 .services{
-
-background:#f7f9fc;
-
-}
-
-.services-head{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:end;
-
-margin-bottom:50px;
-
-gap:30px;
-
+    background:#f7faff;
 }
 
 .services-grid{
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-gap:18px;
-
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
 }
 
-.service{
-
-background:white;
-
-border:1px solid #e7ebf2;
-
-border-radius:17px;
-
-padding:30px;
-
-min-height:240px;
-
-transition:.35s;
-
-position:relative;
-
-overflow:hidden;
-
+.service-card{
+    background:#fff;
+    padding:32px;
+    border-radius:18px;
+    border:1px solid #e4ebf5;
+    transition:.3s;
 }
 
-.service::after{
-
-content:"";
-
-position:absolute;
-
-width:100px;
-
-height:100px;
-
-border-radius:50%;
-
-background:#edf1ff;
-
-right:-40px;
-
-bottom:-40px;
-
-transition:.35s;
-
+.service-card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 15px 35px rgba(21,70,130,.10);
 }
 
-.service:hover{
-
-transform:translateY(-8px);
-
-box-shadow:0 25px 60px rgba(20,40,100,.1);
-
+.service-icon{
+    width:60px;
+    height:60px;
+    background:#eaf3ff;
+    color:#1268e8;
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    margin-bottom:22px;
 }
 
-.service:hover::after{
-
-transform:scale(2);
-
+.service-card h3{
+    font-size:21px;
+    margin-bottom:12px;
+    color:#14366f;
 }
 
-.service-number{
-
-font-size:12px;
-
-font-weight:900;
-
-color:#3150bb;
-
+.service-card p{
+    color:#687891;
+    line-height:1.6;
 }
-
-.service h3{
-
-font-size:21px;
-
-margin-top:25px;
-
-margin-bottom:12px;
-
-}
-
-.service p{
-
-font-size:14px;
-
-line-height:1.7;
-
-color:#737c8f;
-
-}
-
 
 /* =========================
-ABOUT
+   SOBRE
 ========================= */
 
 .about{
-
-background:white;
-
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
 }
 
-.about-grid{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:80px;
-
-align-items:center;
-
+.about-image{
+    position:relative;
 }
 
-.about-visual{
-
-min-height:500px;
-
-background:
-
-linear-gradient(
-
-135deg,
-
-#0b163b,
-
-#2043b4
-
-);
-
-border-radius:25px;
-
-position:relative;
-
-overflow:hidden;
-
-}
-
-.about-visual::before{
-
-content:"CALHAS";
-
-position:absolute;
-
-font-size:100px;
-
-font-weight:900;
-
-color:rgba(255,255,255,.05);
-
-transform:rotate(-15deg);
-
-top:110px;
-
-left:-25px;
-
-}
-
-.about-visual::after{
-
-content:"SANTA MARIA";
-
-position:absolute;
-
-font-size:55px;
-
-font-weight:900;
-
-color:rgba(255,255,255,.05);
-
-transform:rotate(-15deg);
-
-top:230px;
-
-left:-10px;
-
+.about-image img{
+    width:100%;
+    height:430px;
+    object-fit:cover;
+    border-radius:24px;
+    box-shadow:0 20px 50px rgba(15,53,110,.15);
 }
 
 .about-badge{
-
-position:absolute;
-
-left:30px;
-
-bottom:30px;
-
-background:white;
-
-border-radius:14px;
-
-padding:20px;
-
-box-shadow:0 20px 50px rgba(0,0,0,.25);
-
+    position:absolute;
+    bottom:-20px;
+    right:-20px;
+    background:#1268e8;
+    color:white;
+    padding:20px 25px;
+    border-radius:18px;
+    box-shadow:0 15px 30px rgba(18,104,232,.25);
 }
 
 .about-badge strong{
-
-font-size:30px;
-
-display:block;
-
-color:#17349f;
-
+    font-size:30px;
+    display:block;
 }
 
-.about-badge span{
-
-font-size:12px;
-
-color:#6c7486;
-
+.about-content small{
+    color:#1268e8;
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:2px;
 }
 
-.about-text p{
-
-color:#6d7689;
-
-line-height:1.8;
-
-margin-top:18px;
-
+.about-content h2{
+    font-size:42px;
+    color:#102d61;
+    margin:15px 0 20px;
 }
 
-.checks{
-
-list-style:none;
-
-margin-top:30px;
-
+.about-content p{
+    color:#63728b;
+    line-height:1.8;
+    font-size:17px;
+    margin-bottom:18px;
 }
 
-.checks li{
-
-font-size:14px;
-
-font-weight:700;
-
-margin:15px 0;
-
+.check-list{
+    list-style:none;
+    margin-top:25px;
 }
 
-.checks li::before{
-
-content:"✓";
-
-display:inline-flex;
-
-align-items:center;
-
-justify-content:center;
-
-width:23px;
-
-height:23px;
-
-border-radius:50%;
-
-background:#e9eeff;
-
-color:#17349f;
-
-margin-right:10px;
-
+.check-list li{
+    margin-bottom:14px;
+    font-weight:600;
+    color:#29466f;
 }
 
+.check-list li::before{
+    content:"✓";
+    color:#1268e8;
+    font-weight:bold;
+    margin-right:10px;
+}
 
 /* =========================
-WORKS CAROUSEL
+   OBRAS
 ========================= */
 
 .works{
-
-background:#f7f9fc;
-
+    background:#f7faff;
 }
 
-.works-head{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:end;
-
-margin-bottom:45px;
-
+.works-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
 }
 
-.carousel{
-
-position:relative;
-
-overflow:hidden;
-
-border-radius:20px;
-
+.work-card{
+    height:370px;
+    border-radius:20px;
+    overflow:hidden;
+    position:relative;
+    background:#ddd;
 }
 
-.carousel-track{
-
-display:flex;
-
-transition:transform .6s ease;
-
+.work-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
 }
 
-.slide{
-
-min-width:100%;
-
-height:500px;
-
-position:relative;
-
-display:flex;
-
-align-items:flex-end;
-
-padding:35px;
-
-background:
-
-linear-gradient(
-
-135deg,
-
-#d7dbe2,
-
-#59677e
-
-);
-
+.work-card:hover img{
+    transform:scale(1.07);
 }
 
-.slide:nth-child(2){
-
-background:
-
-linear-gradient(
-
-135deg,
-
-#bec6d1,
-
-#263c72
-
-);
-
+.work-overlay{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    padding:30px 25px 25px;
+    color:#fff;
+    background:linear-gradient(transparent,rgba(0,22,65,.9));
 }
 
-.slide:nth-child(3){
-
-background:
-
-linear-gradient(
-
-135deg,
-
-#dfe3e9,
-
-#52617b
-
-);
-
+.work-overlay h3{
+    font-size:20px;
+    margin-bottom:5px;
 }
 
-.slide:nth-child(4){
-
-background:
-
-linear-gradient(
-
-135deg,
-
-#c8ced8,
-
-#1d367d
-
-);
-
+.work-overlay p{
+    font-size:14px;
+    opacity:.9;
 }
-
-.slide-content{
-
-position:relative;
-
-z-index:2;
-
-background:rgba(7,18,48,.85);
-
-color:white;
-
-padding:22px 25px;
-
-border-radius:12px;
-
-max-width:450px;
-
-}
-
-.slide-content small{
-
-color:#91aaff;
-
-font-weight:800;
-
-text-transform:uppercase;
-
-letter-spacing:1px;
-
-}
-
-.slide-content h3{
-
-font-size:25px;
-
-margin-top:6px;
-
-}
-
-.carousel-buttons{
-
-position:absolute;
-
-right:25px;
-
-bottom:25px;
-
-display:flex;
-
-gap:10px;
-
-}
-
-.carousel-buttons button{
-
-width:48px;
-
-height:48px;
-
-border:none;
-
-border-radius:50%;
-
-background:white;
-
-color:#152e92;
-
-font-size:20px;
-
-cursor:pointer;
-
-box-shadow:0 8px 20px rgba(0,0,0,.2);
-
-}
-
-.dots{
-
-display:flex;
-
-justify-content:center;
-
-gap:7px;
-
-margin-top:20px;
-
-}
-
-.dot{
-
-width:8px;
-
-height:8px;
-
-background:#ccd3e2;
-
-border-radius:50%;
-
-cursor:pointer;
-
-}
-
-.dot.active{
-
-width:25px;
-
-border-radius:10px;
-
-background:#17349f;
-
-}
-
 
 /* =========================
-INSTAGRAM
+   INSTAGRAM
 ========================= */
 
 .instagram{
-
-background:white;
-
+    text-align:center;
 }
 
-.instagram-head{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:end;
-
-margin-bottom:40px;
-
+.instagram-box{
+    background:linear-gradient(135deg,#0c3984,#126cf4);
+    color:#fff;
+    border-radius:25px;
+    padding:55px 30px;
 }
 
-.instagram-grid{
-
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:14px;
-
+.instagram-box h2{
+    font-size:38px;
+    margin-bottom:12px;
 }
 
-.insta{
-
-aspect-ratio:1;
-
-border-radius:15px;
-
-overflow:hidden;
-
-position:relative;
-
-background:
-
-linear-gradient(
-
-135deg,
-
-#10246e,
-
-#7e8ebd
-
-);
-
-}
-
-.insta::after{
-
-content:"@calhasantamaria";
-
-position:absolute;
-
-bottom:14px;
-
-left:14px;
-
-color:white;
-
-font-size:11px;
-
-font-weight:700;
-
-background:rgba(0,0,0,.4);
-
-padding:6px 9px;
-
-border-radius:5px;
-
+.instagram-box p{
+    font-size:17px;
+    opacity:.9;
+    margin-bottom:25px;
 }
 
 .instagram-button{
-
-margin-top:35px;
-
-text-align:center;
-
+    display:inline-block;
+    background:#fff;
+    color:#124a9c;
+    padding:15px 28px;
+    border-radius:30px;
+    font-weight:bold;
 }
 
-
 /* =========================
-CTA
+   CTA
 ========================= */
 
 .cta{
-
-padding:100px 0;
-
-background:
-
-linear-gradient(
-
-135deg,
-
-#091535,
-
-#17399f
-
-);
-
-color:white;
-
-text-align:center;
-
+    background:#0c2e69;
+    color:#fff;
+    text-align:center;
+    padding:80px 20px;
 }
 
 .cta h2{
-
-font-size:clamp(35px,5vw,60px);
-
-line-height:1.05;
-
-letter-spacing:-2px;
-
-max-width:850px;
-
-margin:auto;
-
+    font-size:42px;
+    margin-bottom:15px;
 }
 
 .cta p{
-
-color:#d6dfff;
-
-max-width:600px;
-
-margin:20px auto 30px;
-
-line-height:1.7;
-
+    color:#cbd8ef;
+    font-size:18px;
+    margin-bottom:30px;
 }
-
 
 /* =========================
-CONTACT
-========================= */
-
-.contact{
-
-background:white;
-
-}
-
-.contact-grid{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:60px;
-
-}
-
-.contact-box{
-
-padding:30px;
-
-border:1px solid #e7ebf2;
-
-border-radius:16px;
-
-}
-
-.contact-box h3{
-
-margin-bottom:20px;
-
-}
-
-.contact-info{
-
-display:flex;
-
-gap:15px;
-
-margin:20px 0;
-
-}
-
-.contact-info strong{
-
-display:block;
-
-}
-
-.contact-info span{
-
-color:#737c8d;
-
-font-size:13px;
-
-}
-
-
-/* =========================
-FOOTER
+   FOOTER
 ========================= */
 
 footer{
-
-background:#070f27;
-
-color:white;
-
-padding:60px 0 25px;
-
+    background:#071b3d;
+    color:#fff;
+    padding:50px 0 25px;
 }
 
-.footer-grid{
-
-display:grid;
-
-grid-template-columns:1.5fr 1fr 1fr;
-
-gap:50px;
-
-padding-bottom:45px;
-
+.footer-container{
+    width:90%;
+    max-width:1150px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr;
+    gap:50px;
 }
 
 .footer-logo{
-
-width:220px;
-
-background:white;
-
-padding:7px;
-
-border-radius:7px;
-
-margin-bottom:20px;
-
+    width:220px;
+    background:#fff;
+    padding:8px;
+    border-radius:8px;
+    margin-bottom:18px;
 }
 
-footer p{
-
-color:#9da8c1;
-
-font-size:13px;
-
-line-height:1.7;
-
+footer h3{
+    margin-bottom:18px;
 }
 
-footer h4{
-
-margin-bottom:15px;
-
+footer p,
+footer li{
+    color:#b8c6dd;
+    line-height:1.8;
 }
 
-.copyright{
-
-border-top:1px solid rgba(255,255,255,.1);
-
-padding-top:20px;
-
-font-size:11px;
-
-color:#737e98;
-
+footer ul{
+    list-style:none;
 }
 
+.footer-bottom{
+    width:90%;
+    max-width:1150px;
+    margin:40px auto 0;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.1);
+    color:#8194b4;
+    font-size:13px;
+}
 
 /* =========================
-WHATSAPP
+   WHATSAPP FLUTUANTE
 ========================= */
 
 .whatsapp{
-
-position:fixed;
-
-right:22px;
-
-bottom:22px;
-
-width:62px;
-
-height:62px;
-
-border-radius:50%;
-
-background:#25d366;
-
-color:white;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-z-index:2000;
-
-box-shadow:0 10px 30px rgba(0,0,0,.25);
-
-font-size:25px;
-
-transition:.3s;
-
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#20c96b;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:29px;
+    box-shadow:0 8px 25px rgba(0,0,0,.2);
+    z-index:999;
+    transition:.3s;
 }
 
 .whatsapp:hover{
-
-transform:scale(1.08);
-
+    transform:scale(1.08);
 }
-
 
 /* =========================
-MOBILE
+   RESPONSIVO
 ========================= */
 
-@media(max-width:900px){
+@media(max-width:950px){
 
-.menu{
+    nav{
+        display:none;
+    }
 
-display:none;
+    .hero{
+        min-height:680px;
+    }
 
+    .hero-container{
+        min-height:680px;
+    }
+
+    .hero-content{
+        width:100%;
+        padding-top:80px;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .experience-card{
+        right:20px;
+        bottom:35px;
+    }
+
+    .services-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .works-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .footer-container{
+        grid-template-columns:1fr 1fr;
+    }
 }
 
-.hero{
-
-padding-top:120px;
-
-padding-bottom:80px;
-
-}
-
-.hero-content{
-
-grid-template-columns:1fr;
-
-gap:40px;
-
-}
-
-.hero-visual{
-
-height:390px;
-
-}
-
-.services-grid{
-
-grid-template-columns:1fr 1fr;
-
-}
-
-.about-grid{
-
-grid-template-columns:1fr;
-
-gap:40px;
-
-}
-
-.contact-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.instagram-grid{
-
-grid-template-columns:1fr 1fr;
-
-}
-
-.footer-grid{
-
-grid-template-columns:1fr 1fr;
-
-}
-
-}
-
-
-@media(max-width:600px){
-
-.container{
-
-width:min(100% - 30px,1180px);
-
-}
-
-header{
-
-height:70px;
-
-}
-
-.logo{
-
-width:205px;
-
-}
-
-.hero{
-
-padding-top:110px;
-
-}
-
-.hero h1{
-
-font-size:43px;
-
-letter-spacing:-2px;
-
-}
-
-.hero p{
-
-font-size:16px;
-
-}
-
-.hero-visual{
-
-height:330px;
-
-}
-
-.trust-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.trust-item{
-
-border-right:none;
-
-border-bottom:1px solid #e8ebf1;
-
-padding:20px;
-
-}
-
-section{
-
-padding:75px 0;
-
-}
-
-.services-head,
-.works-head,
-.instagram-head{
-
-display:block;
-
-}
-
-.services-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.slide{
-
-height:400px;
-
-padding:20px;
-
-}
-
-.slide-content{
-
-max-width:100%;
-
-}
-
-.instagram-grid{
-
-grid-template-columns:1fr 1fr;
-
-}
-
-.footer-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.about-visual{
-
-min-height:370px;
-
-}
-
-.contact-grid{
-
-gap:20px;
-
-}
-
+@media(max-width:650px){
+
+    header{
+        height:75px;
+    }
+
+    .logo{
+        width:180px;
+    }
+
+    .header-button{
+        padding:11px 15px;
+        font-size:13px;
+    }
+
+    .hero{
+        min-height:700px;
+        background:
+            linear-gradient(
+                90deg,
+                rgba(4,39,100,.91),
+                rgba(6,57,130,.72)
+            ),
+            url("hero-bg.png") center/cover no-repeat;
+    }
+
+    .hero-container{
+        min-height:700px;
+    }
+
+    .hero-content{
+        padding-top:50px;
+    }
+
+    .hero h1{
+        font-size:42px;
+        letter-spacing:-1px;
+    }
+
+    .hero-description{
+        font-size:16px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .experience-card{
+        position:relative;
+        right:auto;
+        bottom:auto;
+        margin-top:40px;
+        width:max-content;
+    }
+
+    .trust-container{
+        grid-template-columns:1fr;
+        padding:20px 0;
+    }
+
+    .trust-item{
+        border-right:none;
+        border-bottom:1px solid #dce3ed;
+        justify-content:flex-start;
+    }
+
+    .trust-item:last-child{
+        border-bottom:none;
+    }
+
+    .services-grid,
+    .works-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section{
+        padding:65px 0;
+    }
+
+    .section-header h2,
+    .about-content h2,
+    .cta h2{
+        font-size:32px;
+    }
+
+    .about-image img{
+        height:320px;
+    }
+
+    .footer-container{
+        grid-template-columns:1fr;
+    }
 }
 
 </style>
-
 </head>
 
-
 <body>
-
 
 <!-- HEADER -->
 
 <header>
 
-<div class="container nav">
+<div class="header-container">
 
 <a href="#inicio">
-
-<img src="logo.png"
-class="logo"
-alt="Calhas Santa Maria">
-
+<img src="logo.png" class="logo" alt="Calhas Santa Maria">
 </a>
 
-<nav class="menu">
-
+<nav>
+<a href="#inicio">Início</a>
 <a href="#servicos">Serviços</a>
-
 <a href="#empresa">Empresa</a>
-
 <a href="#obras">Obras</a>
-
 <a href="#instagram">Instagram</a>
+<a href="#contato">Contato</a>
+</nav>
 
-<a href="#contato" class="menu-button">
+<a class="header-button"
+href="https://wa.me/5515991515316?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento."
+target="_blank">
 
+<span>◉</span>
 Orçamento
 
 </a>
-
-</nav>
 
 </div>
 
@@ -1735,28 +858,23 @@ Orçamento
 
 <section class="hero" id="inicio">
 
-<div class="container hero-content">
+<div class="hero-container">
 
+<div class="hero-content">
 
-<div class="hero-text">
+<div class="location-badge">
 
-<div class="tag">
+<span class="location-dot"></span>
 
-<span></span>
-
-Itapetininga e região
+ITAPETININGA E REGIÃO
 
 </div>
 
-
 <h1>
-
 Proteção que começa no <span>detalhe.</span>
-
 </h1>
 
-
-<p>
+<p class="hero-description">
 
 Calhas, rufos, pingadeiras, coberturas e estruturas
 para proteger seu imóvel com qualidade, experiência
@@ -1764,25 +882,18 @@ e acabamento profissional.
 
 </p>
 
+<div class="hero-buttons">
 
-<div class="buttons">
+<a class="btn-primary"
+href="https://wa.me/5515991515316?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento."
+target="_blank">
 
-<a
-href="https://wa.me/5515991515316"
-target="_blank"
-class="btn btn-primary">
-
-Solicitar orçamento →
+◉ Solicitar orçamento →
 
 </a>
 
-
-<a
-href="#servicos"
-class="btn btn-outline">
-
+<a class="btn-outline" href="#servicos">
 Conhecer serviços
-
 </a>
 
 </div>
@@ -1790,31 +901,21 @@ Conhecer serviços
 </div>
 
 
-<div class="hero-visual">
+<div class="experience-card">
 
-<div class="hero-panel">
-
-<div class="roof"></div>
-
-<div class="metal"></div>
-
-<div class="pipe"></div>
-
+<div class="experience-icon">
+✓
 </div>
 
-
-<div class="hero-card">
+<div>
 
 <strong>+20 anos</strong>
 
-<small>
-de experiência no mercado
-</small>
+<span>de experiência no mercado</span>
 
 </div>
 
 </div>
-
 
 </div>
 
@@ -1823,30 +924,45 @@ de experiência no mercado
 
 <!-- TRUST -->
 
-<div class="trust">
+<section class="trust-bar">
 
-<div class="container trust-grid">
+<div class="trust-container">
 
 <div class="trust-item">
 
-<strong>+20 anos</strong>
+<div class="trust-icon">♢</div>
 
+<div>
+
+<strong>+20 anos</strong>
 <span>de experiência</span>
 
 </div>
 
+</div>
+
+
 <div class="trust-item">
 
-<strong>Sob medida</strong>
+<div class="trust-icon">⚙</div>
 
+<div>
+
+<strong>Sob medida</strong>
 <span>para cada projeto</span>
 
 </div>
 
+</div>
+
+
 <div class="trust-item">
 
-<strong>Itapetininga</strong>
+<div class="trust-icon">⌖</div>
 
+<div>
+
+<strong>Itapetininga</strong>
 <span>e região</span>
 
 </div>
@@ -1855,35 +971,24 @@ de experiência no mercado
 
 </div>
 
+</section>
+
 
 <!-- SERVIÇOS -->
 
-<section class="services" id="servicos">
+<section class="section services" id="servicos">
 
-<div class="container">
+<div class="section-container">
 
+<div class="section-header">
 
-<div class="services-head">
+<small>O que fazemos</small>
 
-<div>
+<h2>Soluções para seu imóvel</h2>
 
-<span class="eyebrow">
-O que fazemos
-</span>
-
-<h2 class="section-title">
-Soluções para sua obra.
-</h2>
-
-</div>
-
-<p class="section-description">
-
-Da proteção contra a chuva ao acabamento
-da cobertura, trabalhamos com diferentes
-soluções para construções residenciais,
-comerciais e industriais.
-
+<p>
+Projetos sob medida, instalação e manutenção
+com acabamento profissional.
 </p>
 
 </div>
@@ -1892,101 +997,88 @@ comerciais e industriais.
 <div class="services-grid">
 
 
-<div class="service">
+<div class="service-card">
 
-<span class="service-number">01</span>
+<div class="service-icon">⌁</div>
 
 <h3>Calhas</h3>
 
 <p>
-
-Soluções sob medida para captação
-e direcionamento da água da chuva.
-
+Fabricação e instalação de calhas sob medida
+para diferentes tipos de imóveis.
 </p>
 
 </div>
 
 
-<div class="service">
+<div class="service-card">
 
-<span class="service-number">02</span>
+<div class="service-icon">▱</div>
 
 <h3>Rufos</h3>
 
 <p>
-
-Proteção para encontros entre telhados,
-paredes e áreas expostas.
-
+Proteção contra infiltrações com rufos
+produzidos e instalados profissionalmente.
 </p>
 
 </div>
 
 
-<div class="service">
+<div class="service-card">
 
-<span class="service-number">03</span>
+<div class="service-icon">◫</div>
 
 <h3>Pingadeiras</h3>
 
 <p>
-
-Acabamento e direcionamento da água
-para ajudar a proteger a estrutura.
-
+Acabamento e proteção para muros,
+paredes e áreas externas.
 </p>
 
 </div>
 
 
-<div class="service">
+<div class="service-card">
 
-<span class="service-number">04</span>
+<div class="service-icon">⌂</div>
 
 <h3>Coberturas</h3>
 
 <p>
-
-Soluções para proteção de áreas
-residenciais e comerciais.
-
-</p>
-
-</div>
-
-
-<div class="service">
-
-<span class="service-number">05</span>
-
-<h3>Steel Frame</h3>
-
-<p>
-
-Estruturas para projetos residenciais
+Soluções para coberturas residenciais
 e comerciais.
-
 </p>
 
 </div>
 
 
-<div class="service">
+<div class="service-card">
 
-<span class="service-number">06</span>
+<div class="service-icon">▦</div>
 
-<h3>Estruturas galvanizadas</h3>
+<h3>Estruturas metálicas</h3>
 
 <p>
-
-Estruturas para telhados e coberturas
-com foco em resistência e durabilidade.
-
+Estruturas galvanizadas e soluções
+metálicas para telhados.
 </p>
 
 </div>
 
+
+<div class="service-card">
+
+<div class="service-icon">↻</div>
+
+<h3>Manutenção</h3>
+
+<p>
+Manutenção e reparos para manter
+seu sistema funcionando corretamente.
+</p>
+
+</div>
 
 </div>
 
@@ -1997,78 +1089,53 @@ com foco em resistência e durabilidade.
 
 <!-- EMPRESA -->
 
-<section class="about" id="empresa">
+<section class="section" id="empresa">
 
-<div class="container about-grid">
+<div class="section-container">
 
+<div class="about">
 
-<div class="about-visual">
+<div class="about-image">
+
+<img src="obra1.jpg" alt="Obra realizada pela Calhas Santa Maria">
 
 <div class="about-badge">
 
-<strong>20+</strong>
-
-<span>
+<strong>+20</strong>
 anos de experiência
-</span>
 
 </div>
 
 </div>
 
 
-<div class="about-text">
+<div class="about-content">
 
-<span class="eyebrow">
-Calhas Santa Maria
-</span>
+<small>Sobre a empresa</small>
 
-<h2 class="section-title">
-
-Experiência construída
-ao longo dos anos.
-
-</h2>
-
+<h2>Experiência que faz diferença.</h2>
 
 <p>
-
-A Calhas Santa Maria atua em Itapetininga
-há mais de duas décadas, oferecendo soluções
-para proteção, acabamento e estrutura de
-diferentes tipos de construção.
-
+A Calhas Santa Maria atua em Itapetininga e região
+oferecendo soluções para proteção, acabamento e
+estrutura de imóveis.
 </p>
-
 
 <p>
-
-Cada projeto possui suas próprias características.
-Por isso, trabalhamos com soluções personalizadas,
-desde a fabricação até a instalação.
-
+Trabalhamos com fabricação, instalação e manutenção,
+buscando oferecer soluções adequadas para cada projeto.
 </p>
 
+<ul class="check-list">
 
-<ul class="checks">
-
-<li>
-Fabricação sob medida
-</li>
-
-<li>
-Matéria-prima de qualidade
-</li>
-
-<li>
-Instalação profissional
-</li>
-
-<li>
-Atendimento em Itapetininga e região
-</li>
+<li>Atendimento em Itapetininga e região</li>
+<li>Projetos sob medida</li>
+<li>Instalação profissional</li>
+<li>Orçamento personalizado</li>
 
 </ul>
+
+</div>
 
 </div>
 
@@ -2079,102 +1146,66 @@ Atendimento em Itapetininga e região
 
 <!-- OBRAS -->
 
-<section class="works" id="obras">
+<section class="section works" id="obras">
 
-<div class="container">
+<div class="section-container">
 
+<div class="section-header">
 
-<div class="works-head">
+<small>Nosso trabalho</small>
 
-<div>
+<h2>Obras realizadas</h2>
 
-<span class="eyebrow">
-Nossos trabalhos
-</span>
-
-<h2 class="section-title">
-Projetos que falam por si.
-</h2>
-
-<p class="section-description">
-
-Aqui vamos colocar as fotos reais
-das obras realizadas pela empresa.
-
+<p>
+Confira alguns dos trabalhos realizados
+pela Calhas Santa Maria.
 </p>
 
 </div>
 
-</div>
+
+<div class="works-grid">
 
 
-<div class="carousel">
+<div class="work-card">
 
-<div class="carousel-track" id="carouselTrack">
+<img src="obra1.jpg" alt="Obra realizada pela Calhas Santa Maria">
 
+<div class="work-overlay">
 
-<div class="slide">
+<h3>Projeto realizado</h3>
 
-<div class="slide-content">
-
-<small>
-Calhas Santa Maria
-</small>
-
-<h3>
-Calhas e soluções para telhados
-</h3>
+<p>Calhas e acabamento</p>
 
 </div>
 
 </div>
 
 
-<div class="slide">
+<div class="work-card">
 
-<div class="slide-content">
+<img src="obra2.jpg" alt="Obra realizada pela Calhas Santa Maria">
 
-<small>
-Projetos
-</small>
+<div class="work-overlay">
 
-<h3>
-Estruturas e coberturas
-</h3>
+<h3>Projeto realizado</h3>
+
+<p>Instalação profissional</p>
 
 </div>
 
 </div>
 
 
-<div class="slide">
+<div class="work-card">
 
-<div class="slide-content">
+<img src="obra3.jpg" alt="Obra realizada pela Calhas Santa Maria">
 
-<small>
-Acabamento
-</small>
+<div class="work-overlay">
 
-<h3>
-Rufos e pingadeiras sob medida
-</h3>
+<h3>Projeto realizado</h3>
 
-</div>
-
-</div>
-
-
-<div class="slide">
-
-<div class="slide-content">
-
-<small>
-Projetos especiais
-</small>
-
-<h3>
-Soluções para diferentes tipos de obra
-</h3>
+<p>Solução sob medida</p>
 
 </div>
 
@@ -2182,36 +1213,6 @@ Soluções para diferentes tipos de obra
 
 
 </div>
-
-
-<div class="carousel-buttons">
-
-<button onclick="previousSlide()">
-‹
-</button>
-
-<button onclick="nextSlide()">
-›
-</button>
-
-</div>
-
-
-</div>
-
-
-<div class="dots" id="dots">
-
-<div class="dot active"></div>
-
-<div class="dot"></div>
-
-<div class="dot"></div>
-
-<div class="dot"></div>
-
-</div>
-
 
 </div>
 
@@ -2220,77 +1221,27 @@ Soluções para diferentes tipos de obra
 
 <!-- INSTAGRAM -->
 
-<section class="instagram" id="instagram">
+<section class="section instagram" id="instagram">
 
-<div class="container">
+<div class="section-container">
 
+<div class="instagram-box">
 
-<div class="instagram-head">
+<h2>Acompanhe nosso trabalho</h2>
 
-<div>
-
-<span class="eyebrow">
-Instagram
-</span>
-
-<h2 class="section-title">
-
-Acompanhe nossos trabalhos.
-
-</h2>
-
-<p class="section-description">
-
-Veja novidades, projetos e serviços
-publicados pela Calhas Santa Maria.
-
+<p>
+Veja mais obras, projetos e novidades no Instagram.
 </p>
 
-</div>
-
-
-<a
+<a class="instagram-button"
 href="https://www.instagram.com/calhasantamaria/"
-target="_blank"
-class="btn"
-style="background:#17349f;color:white;">
+target="_blank">
 
-@calhasantamaria →
+Instagram @calhasantamaria
 
 </a>
 
 </div>
-
-
-<div class="instagram-grid">
-
-
-<div class="insta"></div>
-
-<div class="insta"></div>
-
-<div class="insta"></div>
-
-<div class="insta"></div>
-
-
-</div>
-
-
-<div class="instagram-button">
-
-<a
-href="https://www.instagram.com/calhasantamaria/"
-target="_blank"
-class="btn"
-style="background:#edf1ff;color:#17349f;">
-
-Ver Instagram completo
-
-</a>
-
-</div>
-
 
 </div>
 
@@ -2299,143 +1250,21 @@ Ver Instagram completo
 
 <!-- CTA -->
 
-<section class="cta">
+<section class="cta" id="contato">
 
-<div class="container">
-
-<h2>
-
-Vamos proteger o seu projeto?
-
-</h2>
+<h2>Precisa de um orçamento?</h2>
 
 <p>
-
-Solicite um orçamento e converse com
-a Calhas Santa Maria.
-
+Fale com a Calhas Santa Maria e solicite uma avaliação.
 </p>
 
-<a
-href="https://wa.me/5515991515316"
-target="_blank"
-class="btn btn-primary">
+<a class="btn-primary"
+href="https://wa.me/5515991515316?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento."
+target="_blank">
 
-Falar pelo WhatsApp →
-
-</a>
-
-</div>
-
-</section>
-
-
-<!-- CONTATO -->
-
-<section class="contact" id="contato">
-
-<div class="container">
-
-
-<div class="contact-grid">
-
-
-<div>
-
-<span class="eyebrow">
-Contato
-</span>
-
-<h2 class="section-title">
-
-Fale com a
-Calhas Santa Maria.
-
-</h2>
-
-<p class="section-description">
-
-Entre em contato para solicitar informações
-ou pedir um orçamento.
-
-</p>
-
-</div>
-
-
-<div class="contact-box">
-
-<h3>
-Informações
-</h3>
-
-
-<div class="contact-info">
-
-<div>
-
-<strong>WhatsApp</strong>
-
-<span>
-(15) 99151-5316
-</span>
-
-</div>
-
-</div>
-
-
-<div class="contact-info">
-
-<div>
-
-<strong>Telefone</strong>
-
-<span>
-(15) 3275-3039
-</span>
-
-</div>
-
-</div>
-
-
-<div class="contact-info">
-
-<div>
-
-<strong>Endereço</strong>
-
-<span>
-
-Rua João Francisco da Rocha, 34<br>
-
-Vila Francisca — Itapetininga/SP
-
-</span>
-
-</div>
-
-</div>
-
-
-<a
-href="https://wa.me/5515991515316"
-target="_blank"
-class="btn"
-style="background:#17349f;color:white;width:100%;margin-top:10px;">
-
-Solicitar orçamento
+Solicitar orçamento pelo WhatsApp →
 
 </a>
-
-
-</div>
-
-
-</div>
-
-</div>
 
 </section>
 
@@ -2444,25 +1273,16 @@ Solicitar orçamento
 
 <footer>
 
-<div class="container">
-
-
-<div class="footer-grid">
-
+<div class="footer-container">
 
 <div>
 
-<img
-src="logo.png"
-class="footer-logo"
-alt="Calhas Santa Maria">
+<img src="logo.png" class="footer-logo">
 
 <p>
-
-Calhas, rufos, pingadeiras,
-coberturas e estruturas para
-sua obra.
-
+Calhas, rufos, pingadeiras, coberturas
+e estruturas metálicas em Itapetininga
+e região.
 </p>
 
 </div>
@@ -2470,54 +1290,41 @@ sua obra.
 
 <div>
 
-<h4>
-Contato
-</h4>
+<h3>Contato</h3>
 
-<p>
+<p>📞 (15) 3275-3039</p>
 
-WhatsApp:<br>
+<p>📱 (15) 99151-5316</p>
 
-(15) 99151-5316
-
-<br><br>
-
-Telefone:<br>
-
-(15) 3275-3039
-
-</p>
+<p>✉ calhassantamariaitape@gmail.com</p>
 
 </div>
 
 
 <div>
 
-<h4>
-Redes sociais
-</h4>
+<h3>Endereço</h3>
 
 <p>
+Rua João Francisco da Rocha, 34
+</p>
 
-Instagram<br>
+<p>
+Vila Francisca
+</p>
 
-@calhasantamaria
-
+<p>
+Itapetininga - SP
 </p>
 
 </div>
 
-
 </div>
 
 
-<div class="copyright">
+<div class="footer-bottom">
 
-© 2026 Calhas Santa Maria.
-Todos os direitos reservados.
-
-</div>
-
+© 2026 Calhas Santa Maria — Todos os direitos reservados.
 
 </div>
 
@@ -2526,95 +1333,15 @@ Todos os direitos reservados.
 
 <!-- WHATSAPP -->
 
-<a
-href="https://wa.me/5515991515316"
+<a class="whatsapp"
+href="https://wa.me/5515991515316?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento."
 target="_blank"
-class="whatsapp"
 aria-label="WhatsApp">
 
-☎
+◉
 
 </a>
 
 
-<script>
-
-let currentSlide = 0;
-
-const track =
-document.getElementById("carouselTrack");
-
-const dots =
-document.querySelectorAll(".dot");
-
-const totalSlides = 4;
-
-
-function updateCarousel(){
-
-track.style.transform =
-`translateX(-${currentSlide * 100}%)`;
-
-dots.forEach((dot,index)=>{
-
-dot.classList.toggle(
-"active",
-index === currentSlide
-);
-
-});
-
-}
-
-
-function nextSlide(){
-
-currentSlide++;
-
-if(currentSlide >= totalSlides){
-
-currentSlide = 0;
-
-}
-
-updateCarousel();
-
-}
-
-
-function previousSlide(){
-
-currentSlide--;
-
-if(currentSlide < 0){
-
-currentSlide = totalSlides - 1;
-
-}
-
-updateCarousel();
-
-}
-
-
-dots.forEach((dot,index)=>{
-
-dot.addEventListener("click",()=>{
-
-currentSlide = index;
-
-updateCarousel();
-
-});
-
-});
-
-
-setInterval(nextSlide,5000);
-
-</script>
-
-
 </body>
-
 </html>
